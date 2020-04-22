@@ -3,14 +3,31 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 function Square(props) {
-  //console.log(props.onClick[0].i)
   console.log(props);
-  return (
-    < button className="square" onClick={() => props.onClick()
-    }>
-      {props.value}
-    </button >
-  );
+  if (props.value === "X") {
+
+    return (
+      <button className="square x" onClick={() => props.onClick()
+      }>
+        {props.value}
+      </button>
+    );
+  }
+  else if (props.value === "O") {
+    return (
+      <button className="square o" onClick={() => props.onClick()
+      }>
+        {props.value}
+      </button>
+    );
+  } else {
+    return (
+      <button className="square" onClick={() => props.onClick()
+      }>
+        {props.index}
+      </button>
+    );
+  }
 }
 
 class Board extends React.Component {
@@ -35,7 +52,9 @@ class Board extends React.Component {
       <Square
         value={this.state.squares[i]}
         onClick={() => this.handleClick(i)}
+        index={i}
       />
+
     );
   }
 
@@ -49,7 +68,7 @@ class Board extends React.Component {
     }
 
     return (
-      <div>
+      <div className="all">
         <div className="status">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}

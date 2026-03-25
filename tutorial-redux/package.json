@@ -21,6 +21,17 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "overrides": {
+    "nth-check": "3.0.1",
+    "postcss": "8.5.8",
+    "serialize-javascript": "7.0.4",
+    "webpack-dev-server": "5.2.3",
+    "underscore": "1.13.8",
+    "@tootallnate/once": "3.0.1",
+    "flatted": "3.4.2",
+    "qs": "6.15.0",
+    "svgo": "4.0.1"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
